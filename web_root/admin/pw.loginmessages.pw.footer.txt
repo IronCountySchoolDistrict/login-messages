@@ -1,0 +1,18 @@
+<script type="text/template" id="login-messages-template">
+    <!-- Begin Login Messages -->
+    ~[if.pref.admin_note_enable=1]
+        <div class="~[displaypref:admin_note_type]">
+            ~[displaypref:admin_note_text]
+        </div>
+    [/if]
+    <!-- End Login Messages -->
+</script>
+
+<script>
+
+    $j(function () {
+        var loginMessagesTemplate = $j($j('#login-messages-template').html());
+        var loginMessagesSelect = $j('fieldset');
+        loginMessagesTemplate.insertAfter(loginMessagesSelect);
+    });
+</script>

@@ -1,0 +1,20 @@
+<script type="text/template" id="login-messages-template">
+    <!-- Login Messages link -->
+    <tr class="~[evenoddrow]">
+        <td><a href="login_notes.html">Login Messages</a></td>
+        <td> Configure a message to show on the admin login page, teacher login page, and guardian header.</td>
+    </tr>
+    <!-- end Login Messages link -->
+</script>
+
+<script>
+    $j(function () {
+        var template = $j($j('#login-messages-template').html());
+
+        // Get the second-to-last dividing td, which is dividing the Other Function
+        // portion with the next group of entries.
+        // Insert
+        var select = $j('td[colspan]').eq(-1).parent().prev().prev().prev();
+        template.insertBefore(select);
+    });
+</script>

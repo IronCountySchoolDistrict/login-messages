@@ -1,0 +1,31 @@
+<!-- css used for login notes - Nick -->
+<style>
+    .nomargin {padding-top:5px;}
+    .yespadding {padding-top:5px;}
+    #login-message{
+        display: block;
+        width: 450px;
+        margin-left: 350px;
+        margin-top: -29px;
+        font-size: 13px;
+    }
+</style>
+<!-- end css for login notes -->
+
+<script type="text/template" id="parent-message-template">
+    <!-- Begin Login Message -->
+    ~[if.pref.parent_note_enable=1]
+        <div id="login-message" class="~[displaypref:parent_note_type]">
+            ~[displaypref:parent_note_text]
+        </div>
+    [/if]
+    <!-- End Login Message -->
+</script>
+
+<script>
+    $j(function() {
+        var template = $j($j('#parent-message-template').html());
+        var select = $j('#branding-powerschool');
+        template.insertAfter(select);
+    });
+</script>

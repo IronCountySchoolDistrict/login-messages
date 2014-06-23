@@ -1,0 +1,7 @@
+<!-- Begin Login Messages -->
+~[if.pref.parent_note_enable=1]
+<div class="~[displaypref:parent_note_type]">
+    ~[displaypref:parent_note_text]
+</div>
+[/if]
+<!-- End Login Messages -->

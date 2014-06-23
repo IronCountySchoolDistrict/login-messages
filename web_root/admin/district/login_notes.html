@@ -1,0 +1,113 @@
+<!DOCTYPE html> 
+
+<!-- Login Notes version 1.7
+original customization by Nick Peronti, NickTech.org
+save this file to web_root/admin/students/district/
+-->
+
+<html> 
+<head> 
+	<title>Login Messages</title>
+<!-- Required style sheets: screen.css, and print.css --> 
+	<link href="/images/css/screen.css" rel="stylesheet" media="screen"> 
+	<link href="/images/css/print.css" rel="stylesheet" media="print">
+
+</head> 
+<body> 
+<style>
+.markItUpHeader {width:460px;}
+.fullwidth {width:100%;}
+</style>
+<form action="login_notes.html" method="POST" onsubmit="return true;" name="form1">
+<input type="hidden" name="formSubmitted" value="true"/>
+~[wc:admin_header_css] 
+    <div id="breadcrumbs"> 
+		<!-- breadcrumb start --><a href="/admin/home.html" target="_top">Start Page</a> &gt; <a href="/admin/district/home.html" target="_top">District Setup</a> &gt; Home Page Alerts<!-- breadcrumb end --> 
+    </div> 
+<!-- start of main menu and content --> 
+	~[wc:admin_navigation_css] 
+<!-- Start of Page --> 
+	<h1>Login Messages </h1>
+~[if#formSubmitted.~[gpv:formSubmitted]=True]<div id="changes-saved-message" class="feedback-confirm">Changes saved</div>[/if#formSubmitted]
+<!-- start of content area --> 
+	<div class="box-round"> 
+		 <p> 
+		 	<table width="550" border="0" cellpadding="4">
+  <tr>
+    <td width="38%"><strong>Admin Login Page</strong></td>
+    <td width="62%" rowspan="2">
+<textarea class="psRTE markItUpEditor" style="width:450px;height:120px;" name="[pref]admin_note_text" cols="40" rows="4" id="admin_note_text"></textarea>
+</td>
+  </tr>
+  <tr>
+    <td>Enable
+      <input type="checkbox" name="[pref]admin_note_enable" id="admin_note_enable" value="1"> 
+      Style:      
+      <select name="[pref]admin_note_type" id="admin_note_type">
+        <option value="yespadding">none
+          <option value="feedback-alert nomargin">Red Alert 
+            <option value="feedback-confirm nomargin">Green Check 
+            <option value="feedback-note nomargin">Blue Note 
+            <option value="bold yespadding">Simple Bold
+        </select></td>
+  </tr>
+  <tr bgcolor="#edf3fe">
+    <td bgcolor="#edf3fe"><strong>Teacher Login Page </strong></td>
+    <td rowspan="2"><textarea class="psRTE markItUpEditor" style="width:450px;height:120px;" name="[pref]teacher_note_text" cols="40" rows="4" id="teacher_note_text"></textarea></td>
+  </tr>
+  <tr bgcolor="#edf3fe">
+    <td bgcolor="#edf3fe">Enable
+      <input name="[pref]teacher_note_enable" type="checkbox" id="teacher_note_enable" value="1">
+      Style: 
+      <select name="[pref]teacher_note_type" id="teacher_note_type">
+        <option value="yespadding">none
+          <option value="feedback-alert nomargin">Red Alert 
+            <option value="feedback-confirm nomargin">Green Check 
+            <option value="feedback-note nomargin">Blue Note 
+            <option value="bold yespadding">Simple Bold
+        </select></td>
+  </tr>
+  <tr>
+    <td><strong>Guardian Header </strong></td>
+    <td rowspan="2"><textarea class="psRTE markItUpEditor" style="width:450px;height:120px;" name="[pref]parent_note_text" cols="40" rows="4" id="parent_note_text"></textarea></td>
+  </tr>
+  <tr>
+    <td>Enable 
+      <input name="[pref]parent_note_enable" type="checkbox" id="parent_note_enable" value="1">
+      Style: 
+      <select name="[pref]parent_note_type" id="parent_note_type">
+        <option value="yespadding">none
+          <option value="feedback-alert nomargin">Red Alert 
+            <option value="feedback-confirm nomargin">Green Check 
+            <option value="feedback-note nomargin">Blue Note 
+            <option value="bold yespadding">Simple Bold
+          </select>
+      <br></td>
+  </tr>
+  <tr>
+    <td colspan="2" align="center">
+      <font size="4px"><strong>STYLE EXAMPLES</strong></font>
+      <hr>
+      <table class="fullwidth">
+        <tr>
+          <td><div class="feedback-alert nomargin">Red Alert</div></td>
+          <td><div class="feedback-confirm nomargin">Green Check</div></td>
+          <td><div class="feedback-note nomargin">Blue Note</div></td>
+          <td><div class="bold">Simple Bold</div></td>
+        </tr>
+      </table></td>
+  </tr>
+
+</table>
+		 </p> 
+
+<div class="button-row"><input type="hidden" name="ac" value="prim">~[submitbutton]</div>
+</div> 
+<br>
+<!-- end of content area --> 
+	~[wc:admin_footer_css] 
+</form>
+<!-- required scripts -->
+~[wc:commonscripts]
+</body> 
+</html> 
