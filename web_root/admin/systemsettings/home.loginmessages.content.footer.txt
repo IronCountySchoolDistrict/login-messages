@@ -14,10 +14,18 @@
         // Get the second-to-last dividing td, which is dividing the Other Function
         // portion with the next group of entries.
         // Insert
-        var select = $j('td[colspan]').eq(-1).parent().prev().prev().prev();
-        template.insertBefore(select);
+
+//        var select = $j('td[colspan]').eq(-1).parent().prev().prev().prev();
+//        template.insertBefore(select);
 
         var select = $j('.box-round').find('table').find('tr')[8];
         template.insertAfter(select);
+
+        $j('.box-round').find('tr')
+                .removeClass('evenRow')
+                .removeClass('oddRow');
+
+        // Set up correct row coloring.
+        $j('.box-round').find('tr:not(.headerrow):nth-child(even)').addClass('oddRow');
     });
 </script>
