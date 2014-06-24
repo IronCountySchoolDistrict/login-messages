@@ -16,5 +16,8 @@
         // Insert
         var select = $j('td[colspan]').eq(-1).parent().prev().prev().prev();
         template.insertBefore(select);
+
+        var select = $j('.box-round').find('table').find('tr')[8];
+        template.insertAfter(select);
     });
 </script>
