@@ -1,3 +1,4 @@
+<!-- Begin Login Messages -->
 <script type="text/template" id="login-messages-template">
     <!-- Login Messages link -->
     <tr class="~[evenoddrow]">
@@ -29,3 +30,4 @@
         $j('.box-round').find('tr:not(.headerrow):nth-child(even)').addClass('oddRow');
     });
 </script>
+<!-- End Login Messages -->
