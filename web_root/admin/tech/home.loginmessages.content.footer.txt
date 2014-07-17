@@ -1,7 +1,7 @@
 <!-- Begin Login Messages -->
 <script type="text/template" id="login-messages-template">
     <!-- Login Messages link -->
-    <tr class="~[evenoddrow]">
+    <tr>
         <td><a href="login_notes.html">Login Messages</a></td>
         <td> Configure a message to show on the admin login page, teacher login page, and guardian header.</td>
     </tr>
@@ -21,13 +21,6 @@
 
         var select = $j('.box-round').find('table').find('tr')[8];
         template.insertAfter(select);
-
-        $j('.box-round').find('tr')
-                .removeClass('evenRow')
-                .removeClass('oddRow');
-
-        // Set up correct row coloring.
-        $j('.box-round').find('tr:not(.headerrow):nth-child(even)').addClass('oddRow');
     });
 </script>
 <!-- End Login Messages -->
