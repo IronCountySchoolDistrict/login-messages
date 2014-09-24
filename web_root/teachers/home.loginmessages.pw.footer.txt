@@ -1,0 +1,54 @@
+<script type="text/template" id="login-messages-template">
+    <!-- Begin Login Messages -->
+    ~[if.pref.teacher_note_enable=1]
+    <div class="~[displaypref:teacher_note_type]">
+        ~[displaypref:teacher_note_text]
+    </div>
+    [/if]
+    <!-- End Login Messages -->
+</script>
+
+<script type="text/template" id="capslock-template">
+    <!-- added div for capslock alert -->
+    <div id="capslockdiv" class="error" style="visibility: hidden;">Warning: Caps Lock is currently on.</div>
+    <!-- end div for capslock alert -->
+</script>
+
+<!-- css needed to correct feedback styles on Login Messages -->
+<style>
+    .nomargin {
+        margin: 0 !important;
+    }
+
+    .yespadding {
+        padding-left:15px;
+        padding-right:15px;
+    }
+</style>
+<!-- end css login notes -->
+
+<script>
+    function capslockon(e) {
+        var kc = e.keyCode ? e.keyCode : e.which;
+        var sk = e.shiftKey ? e.shiftKey : kc == 16;
+        if (((kc >= 65 && kc <= 90) && !sk) || ((kc >= 97 && kc <= 122) && sk))
+            document.getElementById('capslockdiv').style.visibility = 'visible';
+        else
+            document.getElementById('capslockdiv').style.visibility = 'hidden';
+    }
+
+    $j(function() {
+        // Is this really the login page? The actual home page doens't have #LoginForm.
+        if($j('#LoginForm').length > 0) {
+            var loginMessagesTemplate = $j($j('#login-messages-template').html());
+            var capsLockDiv = $j($j('#capslock-template').html());
+            var loginMessagesSelect = $j('fieldset');
+            var passwordInput = $j('[name="password"]');
+            capsLockDiv.insertAfter(passwordInput);
+            loginMessagesTemplate.insertAfter(loginMessagesSelect);
+            passwordInput.on('onkeypress', function(event) {
+                capslockon(event);
+            });
+        }
+    });
+</script>
