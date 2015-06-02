@@ -8,12 +8,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/IronCountySchoolDistrict/find-me.git"
+    "url": "git+https://github.com/IronCountySchoolDistrict/login-messages.git"
   },
   "author": "IronCountySchoolDistrict",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/IronCountySchoolDistrict/find-me/issues"
+    "url": "https://github.com/IronCountySchoolDistrict/login-messages/issues"
   },
-  "homepage": "https://github.com/IronCountySchoolDistrict/find-me#readme"
+  "homepage": "https://github.com/IronCountySchoolDistrict/login-messages#readme"
 }
